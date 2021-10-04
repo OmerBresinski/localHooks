@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useFetchAccounts } from "./useFetchAccounts";
 
-export const useAccountList = () => {
+export const useActiveAccountList = () => {
     const { accountList } = useFetchAccounts();
     const [activeAccountList, setActiveAccountList] = useState<typeof accountList | undefined>();
     const [amountOfOldPeople, setAmountOfOldPeople] = useState(0);

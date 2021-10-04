@@ -1,9 +1,9 @@
-import { useAccountList } from "./useAccountList";
+import { useActiveAccountList } from "./useActiveAccountList";
 import Account from "./Account";
 import * as S from "./style";
 
 const AccountsWithHooks = () => {
-    const { activeAccountList, amountOfOldPeople } = useAccountList();
+    const { activeAccountList, amountOfOldPeople } = useActiveAccountList();
 
     return (
         <S.List>
