@@ -19,9 +19,9 @@ export const useActiveAccountList = () => {
     };
 
     const calculateAmountOfOldPeople = () => {
-        let oldPeopleCounter = 0;
-        activeAccountList?.forEach((account) => (oldPeopleCounter += account.age >= 30 ? 1 : 0));
-        setAmountOfOldPeople(oldPeopleCounter);
+        if (activeAccountList) {
+            setAmountOfOldPeople(activeAccountList.reduce((oldPeopleCounter, { age }) => (age >= 30 ? oldPeopleCounter + 1 : oldPeopleCounter), 0));
+        }
     };
 
     return { activeAccountList, amountOfOldPeople };
